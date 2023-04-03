@@ -1,10 +1,8 @@
 ﻿// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами
 
-Console.Write("Введите количество строк: ");
-int rows = int.Parse(Console.ReadLine()!);
+int rows = vvod("Введите количество строк: ");
 
-Console.Write("Введите количество столбцов: ");
-int columns = int.Parse(Console.ReadLine()!);
+int columns = vvod("Введите количество столбцов: ");
 
 double[,] array = GetArray(rows,columns, 0, 99);
 PrintArray(array);
@@ -33,4 +31,10 @@ void PrintArray(double[,] array){
         }
         Console.WriteLine();
     }
+}
+
+int vvod (string text)
+{
+  Console.Write(text);
+  return Convert.ToInt32(Console.ReadLine()!);
 }
